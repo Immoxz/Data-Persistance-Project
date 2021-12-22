@@ -1,23 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
+
+// Sets the script to be executed later than all default scripts
+// This is helpful for UI, since other things may need to be initialized before setting the UI
+[DefaultExecutionOrder(1000)]
 public class InputHandler : MonoBehaviour
 {
+     
     // Start is called before the first frame update
     void Start()
     {
-        var input = gameObject.GetComponent<InputField>();
+        var input = gameObject.GetComponent<TMP_InputField>();
         input.onEndEdit.AddListener(SubmitName);
     }
-    private void SubmitName(string arg0)
+    private void SubmitName(string text_arg)
     {
-        Debug.Log(arg0);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        Debug.Log(text_arg);
+        DataManager.Instance.SetPlayerName(text_arg);
+    } 
+
 }

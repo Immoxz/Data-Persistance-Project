@@ -43,11 +43,6 @@ public class MenuUIHandler : MonoBehaviour
 #else
         Application.Quit();
 #endif
-    }
-
-    public void SetPlayerName(string name)
-    {
-        DataManager.Instance.playerName = name;
-    }
+    } 
 
 }
