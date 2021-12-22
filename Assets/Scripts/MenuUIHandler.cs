@@ -34,6 +34,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartBttnHandler()
     {
+        DataManager.Instance.LoadPlayer();
         SceneManager.LoadScene(1);
     }
     public void QuitBttnHandler()
