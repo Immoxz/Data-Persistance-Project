@@ -20,7 +20,7 @@ public class InputHandler : MonoBehaviour
     }
     private void SubmitName(string text_arg)
     {
-        Debug.Log(text_arg);
+        //Debug.Log(text_arg);
         DataManager.Instance.SetPlayerName(text_arg);
     } 
 
